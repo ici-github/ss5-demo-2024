@@ -54,5 +54,9 @@
         .red {
             background-color: #f44336;
         }
+        
+        .green {
+            background-color: #04AA6D;
+        }
     </style>
 </head>

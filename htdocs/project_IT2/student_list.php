@@ -29,7 +29,10 @@ include("db_connect.php");
                 </th>
             </tr>
             <tr>
-                <th><button type="submit" class="button red" name='process_delete'>Delete</button></th>
+                <th>
+                    <button type="submit" class="button green" name='process_edit'>Edit</button>
+                    <button type="submit" class="button red" name='process_delete'>Delete</button>
+                </th>
             </tr>
         </form>
     </table>
@@ -62,6 +65,7 @@ include("db_connect.php");
                 */
                 echo "<td>" . date("F d, Y", strtotime($result["birthdate"])) . "</td>";
                 echo "<td>";
+                echo "<a href='edit_students.php?action=edit&lrn={$result['lrn']}' class='button green'>Edit</a> ";
                 echo "<a href='student_list.php?action=delete&lrn={$result['lrn']}' class='button red'>Delete</a>";
                 echo "</td>";
                 echo "</tr>";
@@ -90,6 +94,12 @@ include("db_connect.php");
             echo "<script> alert('Student has been removed'); window.location='student_list.php'; </script>";
         }
     }
+    ?>
+    <?php
+        if(isset($_POST['process_edit'])) {
+            $lrn = trim($_POST['student_lrn']);
+            echo "<script> window.location='edit_students.php?action=edit&lrn=$lrn'; </script>";
+        }
     ?>
 </body>
 
