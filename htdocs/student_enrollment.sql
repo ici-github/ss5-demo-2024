@@ -12,6 +12,17 @@ CREATE TABLE `courses` (
   PRIMARY KEY (`course_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+INSERT INTO `courses` (`course_code`, `description`) VALUES
+('BA',	'Bachelor of Arts'),
+('BEED',	'Bachelor of Elementary Education'),
+('BS',	'Bachelor of Science'),
+('BSBA',	'Bachelor of Science in Business Administration'),
+('BSChE',	'Bachelor of Science in Chemical Engineering'),
+('BSCpE',	'Bachelor of Science in Civil Engineering'),
+('BSED',	'Bachelor of Secondary Education'),
+('BSN',	'Bachelor of Science in Nursing'),
+('CA',	'Culinary Arts'),
+('IT',	'Information Technology');
 
 SET NAMES utf8mb4;
 
@@ -26,6 +37,27 @@ CREATE TABLE `students` (
   PRIMARY KEY (`lrn`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+INSERT INTO `students` (`lrn`, `lastname`, `firstname`, `middlename`, `extension_name`, `birthdate`) VALUES
+(789324892,	'Velasques',	'Kyle',	'Malone',	NULL,	'2001-12-10'),
+(1234599999,	'Jones',	'Olivia',	'Marie',	NULL,	'2005-06-06'),
+(1234567890124,	'Smith',	'Jane',	'Doe',	'III',	'2001-02-02'),
+(1234567890125,	'Johnson',	'Michael',	'David',	'',	'2002-03-03'),
+(1234567890126,	'Williams',	'Emily',	'Anne',	'',	'2003-04-04'),
+(1234567890128,	'Jones',	'Olivia',	'Marie',	'',	'2005-06-06'),
+(1234567890129,	'Garcia',	'Noah',	'Elijah',	'',	'2006-07-07'),
+(1234567890130,	'Miller',	'Emma',	'Sophia',	'',	'2007-08-08'),
+(1234567890131,	'Davis',	'Ava',	'Isabella',	'',	'2008-09-09'),
+(1234567890132,	'Rodriguez',	'Oliver',	'Jack',	'',	'2009-10-10'),
+(1234567890134,	'Hernandez',	'Ethan',	'Mason',	'',	'2011-12-12'),
+(1234567890135,	'Lopez',	'Amelia',	'Olivia',	'',	'2012-01-01'),
+(1234567890136,	'Gonzalez',	'Jacob',	'Jack',	'',	'2013-02-02'),
+(1234567890137,	'Wilson',	'Evelyn',	'Mia',	'',	'2014-03-03'),
+(1234567890138,	'Lee',	'Lucas',	'Noah',	'',	'2015-04-04'),
+(1234567890140,	'Thomas',	'Liam',	'Oliver',	'',	'2017-06-06'),
+(1234567890141,	'Taylor',	'Avery',	'Ava',	'',	'2018-07-07'),
+(1234567890142,	'Moore',	'Benjamin',	'Ethan',	'',	'2019-08-08'),
+(94509273940578,	'Cuanan',	'Princess',	'Cabalidas',	NULL,	'2000-09-09'),
+(1234567890000000,	'Bacarro',	'Kyle',	'Palangan',	NULL,	'2024-10-02');
 
 DROP TABLE IF EXISTS `students_courses`;
 CREATE TABLE `students_courses` (
@@ -58,4 +90,4 @@ INSERT INTO `students_courses` (`students_courses_id`, `lrn`, `course_code`, `da
 (19,	1234567890141,	'BSChE',	'2024-07-07 20:00:00'),
 (20,	1234567890142,	'BSCpE',	'2024-08-08 22:00:00');
 
--- 2024-10-02 02:33:22
+-- 2024-10-02 02:46:00
