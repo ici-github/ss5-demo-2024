@@ -28,7 +28,7 @@
         <?php 
             $sql = "SELECT * FROM students_courses
                 INNER JOIN students ON students_courses.lrn = students.lrn
-                INNER JOIN courses ON  students_courses.course_id = courses.course_id
+                INNER JOIN courses ON  students_courses.course_code = courses.course_code
                 ORDER BY students.lastname ASC
             ";
             $query = mysqli_query($connection, $sql);

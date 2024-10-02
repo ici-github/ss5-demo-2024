@@ -6,7 +6,7 @@
 
     $sql = "SELECT * FROM students_courses
         INNER JOIN students ON students.lrn = students_courses.lrn 
-        INNER JOIN courses ON courses.course_id = students_courses.course_id
+        INNER JOIN courses ON courses.course_code = students_courses.course_code
         WHERE students.lrn = '$lrn';
     ";
 
@@ -49,8 +49,8 @@
                             $sql = "SELECT * FROM courses ORDER BY course_name ASC";
                             $query = mysqli_query($connection, $sql);
                             while($c = mysqli_fetch_assoc($query)) {
-                                echo "<option value='{$c['course_id']}'";
-                                if($c['course_id'] == $result['course_id']) {
+                                echo "<option value='{$c['course_code']}'";
+                                if($c['course_code'] == $result['course_code']) {
                                     echo ' selected ';
                                 }
                                 echo "> {$c['course_name']}</option>";
@@ -76,7 +76,7 @@
 
                     $sql_update = "UPDATE students SET lrn = '$e_lrn', firstname ='$e_firstname', lastname='$e_lastname', birthdate = '$e_birthdate' WHERE lrn = '$lrn';";
 
-                    $sql_update .= "INSERT INTO students_courses (lrn, course_id, date_enrolled) ";
+                    $sql_update .= "INSERT INTO students_courses (lrn, course_code, date_enrolled) ";
                     $sql_update .= "VALUES ('$e_lrn', '$e_course', '$currentdate');";
                     
                     if(mysqli_multi_query($connection, $sql_update)) {
