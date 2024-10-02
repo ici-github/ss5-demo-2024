@@ -15,7 +15,7 @@
             while($result = mysqli_fetch_assoc($query)) {
                 echo "<tr>";
                 echo "<td>" . $result['course_id'] . "</td>";
-                echo "<td>{$result['course_name']}</td>";
+                echo "<td>{$result['description']}</td>";
                 echo "</tr>";
             }
         ?>

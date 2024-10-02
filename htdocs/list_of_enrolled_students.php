@@ -37,7 +37,7 @@
                 echo "<td>" . $result['lrn'] . "</td>";
                 // echo "<td>" . $result['lastname'] . ", " . $result['firstname'] . "</td>";
                 echo "<td>{$result['lastname']}, {$result['firstname']}</td>";
-                echo "<td>{$result['course_name']}</td>";
+                echo "<td>{$result['description']}</td>";
                 echo "<td>" . date("F d, Y", strtotime($result['date_enrolled'])) . "</td>";
                 echo "<td><a href='edit_enrolled_student.php?lrn={$result['lrn']}' target='_blank'>Edit</a></td>";
                 echo "</tr>";
