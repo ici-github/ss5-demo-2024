@@ -39,5 +39,16 @@
     nav a:hover {
       background-color: #ddd;
     }
+
+    .button {
+      background-color: #f44336;
+      border: none;
+      color: white;
+      padding: 5px 4px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
   </style>
 </head>
