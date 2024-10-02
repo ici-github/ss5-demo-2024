@@ -32,6 +32,7 @@ include("header.php");
             ?>
           </select>
           <br>
+          <button type="submit" class="button_green" name="update_student">Update Student</button>
           <button type="submit" class="button" name="delete_student">Delete Student</button>
         </form>
       </td>
@@ -73,7 +74,10 @@ include("header.php");
               strtotime - converts a date string to a timestamp
           */
       echo "<td>" . date("F d, Y", strtotime($result["birthdate"])) . "</td>";
-      echo "<td><a class='button' href='student_list.php?action=delete&lrn={$result["lrn"]}'>Delete</a></td>";
+      echo "<td>
+        <a class='button_green' href='update_student.php?action=edit&lrn={$result["lrn"]}'>Edit</a>
+        <a class='button' href='student_list.php?action=delete&lrn={$result["lrn"]}'>Delete</a>
+        </td>";
       echo "</tr>";
     }
     ?>
@@ -104,6 +108,13 @@ include("header.php");
       } else {
         echo "<script> alert('Failed to delete student, check records if student is already enrolled.'; window.location='student_list.php');</script>";
       }
+    }
+  ?>
+
+  <?php
+    if(isset($_POST['update_student'])) {
+      $lrn = $_POST['student_lrn'];
+      echo "<script> window.location = 'update_student.php?action=edit&lrn=$lrn'; </script>";
     }
   ?>
 </body>

@@ -50,5 +50,16 @@
       display: inline-block;
       font-size: 16px;
     }
+
+    .button_green {
+      background-color: #04AA6D;
+      border: none;
+      color: white;
+      padding: 5px 4px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
   </style>
 </head>
