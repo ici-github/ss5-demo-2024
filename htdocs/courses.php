@@ -10,7 +10,7 @@
             <th>Course Name</th>
         </tr>
         <?php 
-            $sql = "SELECT * FROM courses ORDER BY course_name ASC";
+            $sql = "SELECT * FROM courses ORDER BY `description` ASC";
             $query = mysqli_query($connection, $sql);
             while($result = mysqli_fetch_assoc($query)) {
                 echo "<tr>";
