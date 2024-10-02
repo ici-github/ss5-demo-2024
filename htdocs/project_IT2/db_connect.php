@@ -1,8 +1,8 @@
 <?php
 $host = "127.0.0.1";
-$user = getenv("db_user");
-$pass = getenv("db_pass");
-$db = getenv("db_name");
+$user = "mariadb";
+$pass = "mariadb";
+$db = "mariadb";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 

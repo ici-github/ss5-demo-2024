@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
         * {
             font-family: Arial, sans-serif;
         }
+
         nav {
             background-color: #333;
             overflow: hidden;
@@ -37,6 +38,21 @@
         nav a:hover {
             background-color: #ddd;
             color: black;
+        }
+
+        .button {
+
+            border: none;
+            color: white;
+            padding: 5px 4px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .red {
+            background-color: #f44336;
         }
     </style>
 </head>
