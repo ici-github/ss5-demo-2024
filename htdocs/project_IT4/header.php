@@ -77,13 +77,15 @@ th {
   margin-top: 20px;
 }
 
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
+.button {
+  background-color: #04AA6D; /* Green */
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  color: white;
+  padding: 3px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 button:hover {
