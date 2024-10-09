@@ -8,6 +8,7 @@ include("db_connect.php");
     include("menu.php");
     ?>
     <h1> Student List </h1>
+    
     <table border="1" align="center" cellspacing="0" cellpadding="5">
         <form method="post">
             <tr>
@@ -42,10 +43,14 @@ include("db_connect.php");
             <th> LRN </th>
             <th> Student Complete Name </th>
             <th> Birthdate </th>
+            <th> Course </th>
+            <th> Date Enrolled </th>
             <th> Action </th>
         </tr>
         <?php
-        $sql = "SELECT * FROM students";
+        $sql = "SELECT students.lrn, students.lastname, students.firstname, students.birthdate, courses.description AS course_description, students_courses.date_enrolled AS date_enrolled FROM students_courses
+INNER JOIN students ON students_courses.lrn = students.lrn
+INNER JOIN courses ON students_courses.course_code = courses.course_code;";
         $query = mysqli_query($conn, $sql);
         if (!$query) {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -64,6 +69,8 @@ include("db_connect.php");
                     strtotime - converts a date string to a timestamp
                 */
                 echo "<td>" . date("F d, Y", strtotime($result["birthdate"])) . "</td>";
+                echo "<td>" . $result['course_description'] . "</td>";
+                echo "<td>" . date("F d Y, h:iA", strtotime($result['date_enrolled'])) . "</td>";
                 echo "<td>";
                 echo "<a href='edit_students.php?action=edit&lrn={$result['lrn']}' class='button green'>Edit</a> ";
                 echo "<a href='student_list.php?action=delete&lrn={$result['lrn']}' class='button red'>Delete</a>";
