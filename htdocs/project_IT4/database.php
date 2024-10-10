@@ -1,5 +1,6 @@
 <?php
 
+  //connection to database
   $servername = "127.0.0.1";
   $username = "mariadb";
   $password = "mariadb";
