@@ -13,7 +13,6 @@
     ?>
     <h1> Student List who enrolled in <?php echo $course['description']; ?> </h1>
     
-    
     <br>
     <table class='center-table' border="1" align="center" cellspacing="0" cellpadding="10">
         <tr>

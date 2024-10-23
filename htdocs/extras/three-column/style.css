@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+nav {
+    background-color: #23C9FF; /* Vivid sky blue */
+    padding: 15px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+ul.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+ul.menu li {
+    position: relative;
+}
+
+.menu-item > a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    background-color: #7CC6FE; /* Maya blue */
+    border-radius: 5px;
+}
+
+.menu-item > a:hover {
+    background-color: #CCD5FF; /* Periwinkle */
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #E7BBE3; /* Pink lavender */
+    list-style: none;
+    padding: 10px;
+    display: none;
+    border-radius: 8px;
+    min-width: 160px;
+}
+
+.submenu li a {
+    color: #333;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.submenu li a:hover {
+    background-color: #C884A6; /* Puce */
+    border-radius: 5px;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+/* Three-column layout */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px auto;
+    max-width: 1200px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    padding: 20px;
+}
+
+.left {
+    background-color: #CCD5FF; /* Periwinkle */
+}
+
+.middle {
+    background-color: #7CC6FE; /* Maya blue */
+}
+
+.right {
+    background-color: #E7BBE3; /* Pink lavender */
+}
+
+/* Responsive Design for Small Screens */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
