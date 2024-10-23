@@ -7,6 +7,8 @@
     <title>Student Enrollment</title>
     <style>
         * {
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
         }
 
@@ -54,9 +56,23 @@
         .red {
             background-color: #f44336;
         }
-        
+
         .green {
             background-color: #04AA6D;
+        }
+
+        h1 {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .center-table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        th, td {
+            padding: 10px;
         }
     </style>
 </head>

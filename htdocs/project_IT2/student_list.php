@@ -40,6 +40,7 @@ include("db_connect.php");
     <br>
     <table border="1" align="center" cellspacing="0" cellpadding="10">
         <tr>
+            <th> No. </th>
             <th> LRN </th>
             <th> Student Complete Name </th>
             <th> Birthdate </th>
@@ -55,8 +56,10 @@ INNER JOIN courses ON students_courses.course_code = courses.course_code;";
         if (!$query) {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         } else {
+            $i = 1;
             while ($result = mysqli_fetch_assoc($query)) {
                 echo "<tr>";
+                echo "<td>$i</td>";
                 echo "<td>" . $result["lrn"] . "</td>";
                 echo "<td>" . $result["lastname"] . ", " . $result['firstname'] . "</td>";
                 //echo "<td> {$result["lastname"]}, {$result["firstname"]} </td>";
@@ -76,6 +79,7 @@ INNER JOIN courses ON students_courses.course_code = courses.course_code;";
                 echo "<a href='student_list.php?action=delete&lrn={$result['lrn']}' class='button red'>Delete</a>";
                 echo "</td>";
                 echo "</tr>";
+                $i++;
             }
         }
         ?>

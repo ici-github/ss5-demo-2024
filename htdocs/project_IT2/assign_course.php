@@ -65,7 +65,7 @@ $currentdatetime = date("Y-m-d H:i:s", time());
             $sql = "INSERT INTO students_courses (students_courses_id, lrn, course_code, date_enrolled) VALUES (NULL, '$student', '$course', '$currentdatetime')";
 
             if(mysqli_query($conn, $sql)) {
-                echo "<script> alert('Students has been assigned to a course'); window.location='student_list.php'; </script>";
+                echo "<script> alert('Students has been assigned to a course'); window.location='num_of_student_enrolled.php?course_code={$course}'; </script>";
             }
 
         }
