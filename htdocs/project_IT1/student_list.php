@@ -40,9 +40,10 @@ include("header.php");
   </table>
   <table border="1" align="center" cellspacing="0" cellpadding="10">
     <tr>
-      <th colspan="4">List of Students</th>
+      <th colspan="5">List of Students</th>
     </tr>
     <tr>
+      <th> &nbsp;</th>
       <th> LRN </th>
       <th> Student Complete Name</th>
       <th> Birthdate </th>
@@ -64,6 +65,13 @@ include("header.php");
     // when $query is true, display the data
     while ($result = mysqli_fetch_assoc($query)) {
       echo "<tr>";
+      echo "<td>";
+        if($result['filepath']) {
+          echo "<img src='{$result['filepath']}' style='width:30px;'>";
+        } else {
+          echo "<span style='font-size:10px;'> No image uploaded </span>";
+        }
+      echo "</td>";
       echo "<td>" . $result["lrn"] . "</td>";
       echo "<td>" . $result["lastname"] . ", " . $result['firstname'] . " " . $result['middlename'] . "</td>";
       // echo "<td>{$result["lastname"]}, {$result['firstname']} </td>";
